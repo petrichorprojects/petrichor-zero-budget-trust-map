@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Map the five places your buyer checks before saying yes, then find the highest-leverage trust gap to fix first.">
+    <meta name="theme-color" content="#f4f1e9">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zero-Budget Trust Map · Petrichor Projects">
+    <meta property="og:description" content="Find the five places your buyer checks before saying yes—and the highest-leverage trust gap to fix first.">
+    <title>Zero-Budget Trust Map · Petrichor Projects</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#trust-form">Skip to trust map</a>
+    <header>
+      <a href="https://www.petrichorgrowth.com/" aria-label="Petrichor Projects home">
+        <img src="./assets/petrichor-wordmark-dark.png" alt="Petrichor.">
+      </a>
+      <div class="header-right">
+        <span>Relevancy engineering</span>
+        <span>Free founder tool · 01</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-tag">Zero-budget trust map</div>
+        <h1>The channel delivers the click.<br><em>The empty trust surface kills the sale.</em></h1>
+        <div class="hero-foot">
+          <p>Map the five places your buyer checks before they say yes. Fix the emptiest one first.</p>
+          <span>↓ Start with what you sell</span>
+        </div>
+      </section>
+
+      <section class="tool-shell" id="trust-form">
+        <div class="form-panel">
+          <div class="section-number">01 / Inputs</div>
+          <h2>Who needs to believe what?</h2>
+          <form id="map-form">
+            <label>
+              <span>What are you selling?</span>
+              <input id="product" name="product" type="text" required maxlength="90" value="Workforce planning software" autocomplete="off">
+            </label>
+            <label>
+              <span>Who buys it?</span>
+              <input id="buyer" name="buyer" type="text" required maxlength="120" value="COOs at 100–500 person companies" autocomplete="off">
+            </label>
+            <div class="split-fields">
+              <label>
+                <span>Sales motion</span>
+                <select id="type" name="type">
+                  <option value="service">Expert service</option>
+                  <option value="software" selected>B2B software</option>
+                  <option value="consumer">Consumer product</option>
+                  <option value="local">Local service</option>
+                  <option value="marketplace">Marketplace / community</option>
+                </select>
+              </label>
+              <label>
+                <span>Typical commitment</span>
+                <select id="price" name="price">
+                  <option value="starter">Under $500</option>
+                  <option value="considered">$500–$5k</option>
+                  <option value="high" selected>$5k–$25k</option>
+                  <option value="enterprise">$25k+</option>
+                </select>
+              </label>
+            </div>
+            <button class="generate-button" type="submit">
+              <span>Build my trust map</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+          <p class="privacy-note">Nothing is submitted. The map is generated in your browser.</p>
+        </div>
+
+        <div class="map-panel" aria-live="polite">
+          <div class="map-topline">
+            <div class="section-number">02 / Buyer checks</div>
+            <button id="copy-map" type="button">Copy map <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="map-stage" id="map-stage">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <line x1="50" y1="50" x2="19" y2="20"></line>
+              <line x1="50" y1="50" x2="81" y2="20"></line>
+              <line x1="50" y1="50" x2="14" y2="76"></line>
+              <line x1="50" y1="50" x2="50" y2="88"></line>
+              <line x1="50" y1="50" x2="86" y2="76"></line>
+            </svg>
+            <div class="map-center">
+              <span>Decision point</span>
+              <strong id="buyer-short">Your buyer</strong>
+            </div>
+            <div id="map-nodes"></div>
+          </div>
+          <div class="coverage-bar">
+            <div>
+              <span>Trust coverage</span>
+              <strong id="coverage-score">0%</strong>
+            </div>
+            <div class="bar-track"><span id="coverage-fill"></span></div>
+            <p id="coverage-note">Assume a surface is empty until a buyer can actually find it.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="results-section">
+        <div class="results-intro">
+          <div class="section-number">03 / Build order</div>
+          <h2>Five checks.<br>One place to start.</h2>
+          <p>Set each surface to its honest state. The list reorders around the largest trust gap and the buying stakes.</p>
+          <div class="legend">
+            <span><i class="empty"></i> Empty</span>
+            <span><i class="thin"></i> Thin</span>
+            <span><i class="strong"></i> Strong</span>
+          </div>
+        </div>
+        <ol class="surface-list" id="surface-list"></ol>
+      </section>
+
+      <section class="sequence-section">
+        <div class="sequence-copy">
+          <div class="section-number">04 / No-budget sequence</div>
+          <h2>Spend time in leverage order.</h2>
+          <p>Do not open five channels. Make the first three buyer checks repeat the same credible claim, then use channels to point at them.</p>
+        </div>
+        <ol id="action-sequence"></ol>
+      </section>
+
+      <section class="cta">
+        <div>
+          <span>The channel is the introduction.</span>
+          <h2>Engineer what the buyer finds next.</h2>
+        </div>
+        <a href="https://www.petrichorgrowth.com/">Talk to Petrichor <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <img src="./assets/petrichor-wordmark-dark.png" alt="Petrichor.">
+      <div>
+        <span>Authentic core.</span>
+        <span>Category ownership.</span>
+        <span>Distribution mastery.</span>
+      </div>
+      <a href="https://www.petrichorgrowth.com/">petrichorgrowth.com</a>
+    </footer>
+  </body>
+</html>
